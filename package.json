@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "dappi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ontop-team/dappi.git"
+  },
+  "author": "ontop.team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ontop-team/dappi/issues"
+  },
+  "homepage": "https://github.com/ontop-team/dappi#readme",
+  "workspaces": [
+    "app",
+    "packages/components"
+  ]
+}
