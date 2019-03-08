@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook"
   },
@@ -19,11 +21,14 @@
     "url": "https://github.com/ontop-team/dappi/issues"
   },
   "homepage": "https://github.com/ontop-team/dappi#readme",
-  "workspaces": [
-    "app",
-    "packages/components"
-  ],
-  "dependencies": {},
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5",
+    "@dappi/components": "0.0.1",
+    "@dappi/widget": "0.0.1"
+  },
   "devDependencies": {
     "@storybook/cli": "^5.0.0",
     "@babel/core": "^7.3.4",
@@ -32,6 +37,26 @@
     "@storybook/addons": "^5.0.0",
     "@storybook/react": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
-    "babel-loader": "^8.0.5"
-  }
+    "@types/classnames": "^2.2.6",
+    "@types/jest": "24.0.9",
+    "@types/node": "11.10.4",
+    "@types/react": "16.8.6",
+    "@types/react-dom": "16.8.2",
+    "babel-loader": "^8.0.5",
+    "typescript": "3.3.3333",
+    "node-sass": "^4.11.0"
+  },
+  "workspaces": [
+    "src/packages/components",
+    "src/packages/widget"
+  ],
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

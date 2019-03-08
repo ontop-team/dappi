@@ -27,11 +27,11 @@ export const ButtonWeb3: React.FC<IProps> = ({
   aborted,
   confirmed,
   onClick,
-  icon,
+  // icon,
   children,
 }) => {
   return (
-    <buttonWeb3
+    <div
       className={classnames(styles.self, {
         [styles.primary]: primary,
         [styles.disabled]: disabled,
@@ -46,6 +46,6 @@ export const ButtonWeb3: React.FC<IProps> = ({
       onClick={onClick}
     >
       {children}
-    </buttonWeb3>
+    </div>
   );
 };
