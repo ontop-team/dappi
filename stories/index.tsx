@@ -7,8 +7,9 @@ import { linkTo } from '@storybook/addon-links';
 import { Welcome } from '@storybook/react/demo';
 
 import { Button } from '@dappi/components/button';
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+import { Input, InputWithHelper } from '@dappi/components/input';
+import { ButtonWeb3 } from '@dappi/components/buttonWeb3';
+import { Label } from '@dappi/components/label';
 
 storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
@@ -19,3 +20,59 @@ storiesOf('Button', module)
       </span>
     </Button>
   ));
+
+storiesOf('ButtonWeb3', module)
+  .add('primary', () => (
+    <ButtonWeb3 primary onClick={action('clicked')}>
+      Send
+    </ButtonWeb3>
+  ))
+  .add('disabled', () => (
+    <ButtonWeb3 disabled onClick={action('clicked')}>
+      Unlock Metamask
+    </ButtonWeb3>
+  ))
+  .add('notdetected', () => (
+    <ButtonWeb3 notdetected onClick={action('clicked')}>
+      Create a wallet
+    </ButtonWeb3>
+  ))
+  .add('loading', () => (
+    <ButtonWeb3 loading onClick={action('clicked')}>
+      Processing
+    </ButtonWeb3>
+  ))
+  .add('confirming', () => (
+    <ButtonWeb3 confirming onClick={action('clicked')}>
+      Confirm in Metamask
+    </ButtonWeb3>
+  ))
+  .add('onchain', () => (
+    <ButtonWeb3 onchain onClick={action('clicked')}>
+      Confirming transaction
+    </ButtonWeb3>
+  ))
+  .add('slow', () => (
+    <ButtonWeb3 slow onClick={action('clicked')}>
+      It takes too long
+    </ButtonWeb3>
+  ))
+  .add('aborted', () => (
+    <ButtonWeb3 aborted onClick={action('clicked')}>
+      Transaction aborted
+    </ButtonWeb3>
+  ))
+  .add('confirmed', () => (
+    <ButtonWeb3 confirmed onClick={action('clicked')}>
+      Success!
+    </ButtonWeb3>
+  ));
+
+storiesOf('Label', module).add('Default', () => <Label>Address</Label>);
+
+storiesOf('Input', module)
+  .add('Default', () => <Input />)
+  .add('Warning', () => <Input warning />)
+  .add('Error', () => <Input error />);
+
+storiesOf('InputWithHelper', module).add('Default', () => <InputWithHelper>Paste</InputWithHelper>);

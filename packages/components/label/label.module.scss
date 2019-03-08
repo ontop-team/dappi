@@ -1,0 +1,8 @@
+@import '../font.scss';
+@import '../variables.scss';
+
+.self {
+  @extend %small-font;
+  color: $white;
+  margin-bottom: 15px;
+}

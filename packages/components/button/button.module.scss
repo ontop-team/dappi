@@ -1,5 +1,10 @@
+@import '../font.scss';
+@import '../variables.scss';
+
 .self {
-  color: red;
+  @extend %interFont;
+  color: $primary-color;
+
   &:hover {
     color: blue;
   }

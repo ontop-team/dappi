@@ -1,0 +1,59 @@
+@import '../font.scss';
+@import '../variables.scss';
+
+.self {
+  display: inline-block;
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  color: $white;
+  @extend %interFont;
+  background-color: $metamask;
+  max-height: 44px;
+  padding: 13px 15px 12px 15px;
+  border-radius: $regular-border-radius;
+  max-width: 440px;
+  width: 230px;
+  border: 0;
+}
+
+.primary {
+  text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.slow,
+.aborted,
+.notdetected,
+.disabled {
+  background-color: transparent;
+  border: 1px solid $red;
+}
+
+.loading {
+  background-color: transparent;
+  border: 1px solid $grey;
+}
+
+.onchain,
+.confirming {
+  background-color: transparent;
+  border: 1px solid $metamask;
+}
+
+.confirmed {
+  background-color: transparent;
+  border: 1px solid $green;
+}
+
+.icon {
+  display: block;
+  border-radius: $regular-border-radius;
+  box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 0.3);
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+  width: 34px;
+  background-color: pink;
+  height: 34px;
+}
