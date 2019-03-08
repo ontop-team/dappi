@@ -10,6 +10,7 @@
 $primary-color: orange;
 $grey: #798a93;
 $dark-grey: #2a343b;
+$very-dark-grey: #1a232a;
 $white: #ffffff;
 $red: #fd2d49;
 $orange: #fdaa2d;
@@ -37,17 +38,17 @@ $regular-border-radius: 6px;
 %very-small-font {
   font-size: $very-small;
   font-weight: 500;
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 %small-font {
   font-size: $small;
   font-weight: 500;
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 %regular-font {
   font-size: $regular;
   font-weight: 300;
-  font-family: 'Inter';
+  font-family: "Inter";
 }

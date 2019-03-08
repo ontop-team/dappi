@@ -1,7 +1,7 @@
-import classnames from 'classnames';
-import React from 'react';
+import classnames from "classnames";
+import React from "react";
 
-import styles from './input.module.scss';
+import styles from "./input.module.scss";
 
 interface IProps {
   primary?: boolean;
@@ -10,29 +10,40 @@ interface IProps {
   onClick?(): void;
 }
 
-export const Input: React.FC<IProps> = ({ primary, error, warning, onClick }) => {
+export const Input: React.FC<IProps> = ({
+  primary,
+  error,
+  warning,
+  onClick
+}) => {
   return (
     <input
-      placeholder={'Any value'}
+      placeholder={"Any value"}
       className={classnames(styles.self, {
         [styles.primary]: primary,
         [styles.error]: error,
-        [styles.warning]: warning,
+        [styles.warning]: warning
       })}
       onClick={onClick}
     />
   );
 };
 
-export const InputWithHelper: React.FC<IProps> = ({ primary, error, warning, onClick, children }) => {
+export const InputWithHelper: React.FC<IProps> = ({
+  primary,
+  error,
+  warning,
+  onClick,
+  children
+}) => {
   return (
     <div className={styles.container}>
       <input
-        placeholder={'Any value'}
+        placeholder={"Any value"}
         className={classnames(styles.self, {
           [styles.primary]: primary,
           [styles.error]: error,
-          [styles.warning]: warning,
+          [styles.warning]: warning
         })}
         onClick={onClick}
       />
