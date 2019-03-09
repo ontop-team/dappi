@@ -1,5 +1,5 @@
-@import "../font.scss";
-@import "../variables.scss";
+@import '../font.scss';
+@import '../variables.scss';
 
 .self {
   @extend %very-small-font;
@@ -15,20 +15,20 @@
 .self:before {
   position: absolute;
   display: block;
-  content: "";
+  content: '';
   left: 0;
   border-left: 1px solid $dark-grey;
   height: 100%;
 }
 
 .self:after {
-  content: "";
+  content: '';
   margin: auto 0;
   right: 0;
   margin-left: 10px;
   width: 20px;
   height: 20px;
-  background-image: url("../../../images/chevronDown.svg");
+  background-image: url('../../../images/chevronDown.svg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }

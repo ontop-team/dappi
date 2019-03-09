@@ -8,5 +8,7 @@ interface IProps {
 }
 
 export const Label: React.FC<IProps> = ({ primary, children }) => {
-  return <label className={classnames(styles.self, { [styles.primary]: primary })}>{children}</label>;
+  return (
+    <label className={classnames(styles.self, { [styles.primary]: primary })}>{children}</label>
+  );
 };
