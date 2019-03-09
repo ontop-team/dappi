@@ -24,14 +24,14 @@
   &:hover {
     color: $white;
     cursor: pointer;
+    @extend %moveup;
     @extend %transition;
     box-shadow: 0px 8px 20px -14px rgba(10, 16, 19, 0.5),
       inset 0px 1px 2px rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px);
   }
 
   &:active {
-    transform: scale(0.98);
+    @extend %shrink;
   }
 }
 
