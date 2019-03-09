@@ -1,0 +1,76 @@
+@import '../font.scss';
+@import '../variables.scss';
+
+$color:      #ffffff;
+$size:       30px;
+$speed:      0.75s;
+$thickness:  7px; // Odd numbers created a "wobble" effect.
+
+.self {
+  width: 34px;
+  height: 34px;
+  display: block;
+  border-radius: $regular-border-radius;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.alert {
+  @extend %inset-shadow;
+  background-color: $red;
+  background-image: url('../../../images/exclamation.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.importantAlert {
+  background-color: $white;
+  background-image: url('../../../images/exclamationRed.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.success {
+  @extend %inset-shadow;
+  background-color: $green;
+  background-image: url('../../../images/checkmark.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.send {
+  background-image: url('../../../images/send.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.loading {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: rotate;
+  height: 24px;
+  margin: 5px;
+  width: 24px;
+  border-radius: 50%;
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+      border: 2px solid $white;
+      border-right-color: transparent;
+    }
+
+    50% {
+      transform: rotate(180deg);
+      border: 2px solid $grey;
+      border-right-color: transparent;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      border: 2px solid $white;
+      border-right-color: transparent;
+    }
+  }
+}

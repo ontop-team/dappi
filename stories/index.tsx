@@ -8,9 +8,10 @@ import { Welcome } from "@storybook/react/demo";
 
 import { Button } from "@dappi/components/button";
 import { Input, InputWithHelper } from "@dappi/components/input";
-import { ButtonWeb3 } from "@dappi/components/buttonWeb3";
+import { ButtonWeb3, ButtonWeb3WithIcon } from "@dappi/components/buttonWeb3";
 import { Label } from "@dappi/components/label";
 import { Counter } from "@dappi/components/counter";
+import { Icon } from "@dappi/components/icon";
 import {
   Field,
   FieldConfigurable,
@@ -76,6 +77,55 @@ storiesOf("ButtonWeb3", module)
     </ButtonWeb3>
   ));
 
+
+
+  storiesOf("ButtonWeb3WithIcon", module)
+  .add("primary", () => (
+    <ButtonWeb3WithIcon primary onClick={action("clicked")}>
+      Send<Icon send></Icon>
+    </ButtonWeb3WithIcon>
+  ))
+  .add("disabled", () => (
+    <ButtonWeb3WithIcon disabled onClick={action("clicked")}>
+      Unlock Metamask<Icon alert></Icon>
+    </ButtonWeb3WithIcon>
+  ))
+  .add("notdetected", () => (
+    <ButtonWeb3WithIcon notdetected onClick={action("clicked")}>
+      Create a wallet<Icon alert></Icon>
+    </ButtonWeb3WithIcon>
+  ))
+  .add("loading", () => (
+    <ButtonWeb3WithIcon loading onClick={action("clicked")}>
+      Processing<Icon loading></Icon>
+    </ButtonWeb3WithIcon>
+  ))
+  .add("confirming", () => (
+    <ButtonWeb3WithIcon confirming onClick={action("clicked")}>
+      Confirm in Metamask
+    </ButtonWeb3WithIcon>
+  ))
+  .add("onchain", () => (
+    <ButtonWeb3WithIcon onchain onClick={action("clicked")}>
+      Confirming transaction<Icon loading></Icon>
+    </ButtonWeb3WithIcon>
+  ))
+  .add("slow", () => (
+    <ButtonWeb3WithIcon slow onClick={action("clicked")}>
+      It takes too long<Icon alert></Icon>
+    </ButtonWeb3WithIcon>
+  ))
+  .add("aborted", () => (
+    <ButtonWeb3WithIcon aborted onClick={action("clicked")}>
+      Transaction aborted<Icon importantAlert></Icon>
+    </ButtonWeb3WithIcon>
+  ))
+  .add("confirmed", () => (
+    <ButtonWeb3 confirmed onClick={action("clicked")}>
+      Success!<Icon success></Icon>
+    </ButtonWeb3>
+  ));
+
 storiesOf("Label", module).add("Default", () => <Label>Address</Label>);
 
 storiesOf("Input", module)
@@ -117,3 +167,11 @@ storiesOf("FieldConfigurable", module)
 storiesOf("counter", module)
   .add("Default", () => <Counter>5</Counter>)
   .add("Active", () => <Counter configured>5</Counter>);
+
+
+storiesOf("icon", module)
+.add("Alert", () => <Icon alert></Icon>)
+.add("Important Alert", () => <Icon importantAlert></Icon>)
+.add("Loading", () => <Icon loading></Icon>)
+.add("Success", () => <Icon success></Icon>)
+.add("Send", () => <Icon send></Icon>);

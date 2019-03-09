@@ -17,26 +17,55 @@
   border: 0;
 }
 
+.withIcon {
+  p {
+    display: inline-block;
+  }
+}
+
 .primary {
   @extend %transition;
+  @extend %inset-shadow;
   text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  &::before {
+    content: '';
+    display: block;
+    height: 180px;
+    top: -90px;
+    width: 70px;
+    transform: rotate(1deg) translateX(-200%);
+    background-color: $white;
+    position: absolute;
+    opacity: 0.3;
+    transition: all 0.4 ease-out;
+  }
+
   &:hover {
     @extend %transition;
-    @extend %moveup;
     cursor: pointer;
     box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.6);
   }
+
+  &:hover::before {
+    transform: rotate(1deg) translateX(440px);
+    transition: all 1.2s ease;
+  }
+
   &:active {
     @extend %shrink;
   }
 }
 
 .slow,
-.aborted,
 .notdetected,
 .disabled {
   background-color: transparent;
+  border: 1px solid $red;
+}
+
+.aborted {
+  background-color: $red;
   border: 1px solid $red;
 }
 
@@ -59,7 +88,7 @@
 .icon {
   display: block;
   border-radius: $regular-border-radius;
-  box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 0.3);
+  @extend %inset-shadow;
   position: absolute;
   right: 5px;
   bottom: 4px;

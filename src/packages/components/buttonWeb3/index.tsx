@@ -27,7 +27,6 @@ export const ButtonWeb3: React.FC<IProps> = ({
   aborted,
   confirmed,
   onClick,
-  // icon,
   children,
 }) => {
   return (
@@ -46,6 +45,43 @@ export const ButtonWeb3: React.FC<IProps> = ({
       onClick={onClick}
     >
       {children}
+    </div>
+  );
+};
+
+
+
+export const ButtonWeb3WithIcon: React.FC<IProps> = ({
+  primary,
+  disabled,
+  loading,
+  notdetected,
+  confirming,
+  onchain,
+  slow,
+  aborted,
+  confirmed,
+  onClick,
+  children
+}) => {
+  return (
+    <div>
+      <div
+        className={classnames(styles.self, styles.withIcon, {
+          [styles.primary]: primary,
+          [styles.disabled]: disabled,
+          [styles.notdetected]: notdetected,
+          [styles.loading]: loading,
+          [styles.confirming]: confirming,
+          [styles.onchain]: onchain,
+          [styles.slow]: slow,
+          [styles.aborted]: aborted,
+          [styles.confirmed]: confirmed,
+        })}
+        onClick={onClick}
+      >
+        {children}
+      </div>
     </div>
   );
 };
