@@ -10,7 +10,12 @@ import { Button } from "@dappi/components/button";
 import { Input, InputWithHelper } from "@dappi/components/input";
 import { ButtonWeb3 } from "@dappi/components/buttonWeb3";
 import { Label } from "@dappi/components/label";
-import { Field } from "@dappi/components/field";
+import { Counter } from "@dappi/components/counter";
+import {
+  Field,
+  FieldConfigurable,
+  FieldConfigured
+} from "@dappi/components/field";
 
 storiesOf("Button", module)
   .add("with text", () => (
@@ -91,3 +96,24 @@ storiesOf("Field", module).add("Active", () => (
     Name of smart contract
   </Field>
 ));
+
+storiesOf("FieldConfigurable", module)
+  .add("Disabled", () => (
+    <FieldConfigurable>Name of smart contract</FieldConfigurable>
+  ))
+
+  .add("Active", () => (
+    <FieldConfigurable active activeText>
+      Name of smart contract
+    </FieldConfigurable>
+  ))
+
+  .add("Configured", () => (
+    <FieldConfigured active activeText>
+      Name of smart contract
+    </FieldConfigured>
+  ));
+
+storiesOf("counter", module)
+  .add("Default", () => <Counter>5</Counter>)
+  .add("Active", () => <Counter configured>5</Counter>);
