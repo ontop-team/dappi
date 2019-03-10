@@ -140,15 +140,24 @@ storiesOf("InputWithHelper", module).add("Default", () => (
   <InputWithHelper>Paste</InputWithHelper>
 ));
 
-storiesOf("Field", module).add("Default", () => (
-  <Field>Name of smart contract</Field>
-));
 
-storiesOf("Field", module).add("Active", () => (
-  <Field active activeText>
-    Name of smart contract
-  </Field>
-));
+
+storiesOf("Field", module)
+  .add("Loading", () => (
+    <Field loading loadingText>
+      Name of smart contract
+    </Field>
+  ))
+  .add("Default", () => (
+    <Field >
+      Name of smart contract
+    </Field>
+  ))
+  .add("Active", () => (
+    <Field active activeText>
+      Name of smart contract
+    </Field>
+  ));
 
 storiesOf("FieldConfigurable", module)
   .add("Disabled", () => (
@@ -162,7 +171,7 @@ storiesOf("FieldConfigurable", module)
   ))
 
   .add("Loading", () => (
-    <FieldConfigurable loading>
+    <FieldConfigurable loading loadingText>
       Name of smart contract
     </FieldConfigurable>
   ))
@@ -176,6 +185,7 @@ storiesOf("FieldConfigurable", module)
 
 storiesOf("counter", module)
   .add("Default", () => <Counter>5</Counter>)
+  .add("Disabled", () => <Counter disabled>5</Counter>)
   .add("Active", () => <Counter configured>5</Counter>);
 
 
@@ -206,13 +216,26 @@ storiesOf("modal", module)
 
 
 storiesOf("Alert", module)
-  .add("primary", () => (
-    <Alert primary onClick={action("clicked")}>
-      Send<Icon send></Icon>
+  .add("Primary", () => (
+    <Alert>
+      Everything’s good! It happened.
     </Alert>
   ))
-  .add("disabled", () => (
-    <Alert disabled onClick={action("clicked")}>
-      Unlock Metamask<Icon alert></Icon>
+
+  .add("Error", () => (
+    <Alert error>
+      It’s kinda bad. It needs a fix.<Icon alert></Icon>
+    </Alert>
+  ))
+
+  .add("CriticalError", () => (
+    <Alert criticalError>
+      It’s really bad. Really, really.<Icon importantAlert></Icon>
+    </Alert>
+  ))
+
+  .add("Success", () => (
+    <Alert success>
+      Everything’s amazing! Success!<Icon success></Icon>
     </Alert>
   ));

@@ -5,18 +5,16 @@ import styles from './alert.module.scss';
 
 interface IProps {
   success?: boolean;
-  info?: boolean;
-  alert?: boolean;
-  importantAlert?: boolean;
+  error?: boolean;
+  criticalError?: boolean;
   onClick?(): void;
 }
 
 
 export const Alert: React.FC<IProps> = ({
   success,
-  info,
-  alert,
-  importantAlert,
+  error,
+  criticalError,
   children,
   onClick
 }) => {
@@ -25,9 +23,8 @@ export const Alert: React.FC<IProps> = ({
       <div
         className={classnames(styles.self, styles.withIcon, {
           [styles.success]: success,
-          [styles.info]: info,
-          [styles.alert]: alert,
-          [styles.importantAlert]: importantAlert,
+          [styles.error]: error,
+          [styles.criticalError]: criticalError,
         })}
         onClick={onClick}
       >

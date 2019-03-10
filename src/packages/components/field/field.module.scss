@@ -50,14 +50,20 @@
   color: white;
 }
 
+.loadingText {
+  background-color: $grey;
+  color: $grey;
+  opacity: 0.1;
+  height: 30px;
+  width: 230px;
+  border-radius: $small-border-radius;
+}
+
 .active {
   background-image: url('../../../images/eyeActive.svg');
 }
 
-.loadingInner {
-  opacity: 0;
-  background-color: red;
-}
+
 .loading {
   overflow: hidden;
 
