@@ -12,6 +12,7 @@ import { ButtonWeb3, ButtonWeb3WithIcon } from "@dappi/components/buttonWeb3";
 import { Label } from "@dappi/components/label";
 import { Counter } from "@dappi/components/counter";
 import { Modal } from "@dappi/components/modal";
+import { WidgetContainer } from "@dappi/components/widgetContainer";
 import { Icon } from "@dappi/components/icon";
 import {
   Field,
@@ -176,6 +177,12 @@ storiesOf("icon", module)
   .add("Loading", () => <Icon loading></Icon>)
   .add("Success", () => <Icon success></Icon>)
   .add("Send", () => <Icon send></Icon>);
+
+
+storiesOf("widgetContainer", module)
+  .add("default", () => <WidgetContainer></WidgetContainer>)
+  .add("error", () => <WidgetContainer error></WidgetContainer>)
+  .add("warning", () => <WidgetContainer warning></WidgetContainer>);
 
 
 storiesOf("modal", module)
