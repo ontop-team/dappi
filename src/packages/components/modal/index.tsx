@@ -2,17 +2,15 @@ import classnames from 'classnames';
 import React from 'react';
 import hug from '../../../images/3dHug.png'; 
 
-
-
 import styles from './modal.module.scss';
 import { Button } from '@dappi/components/button';
 
 interface IProps {
-  onClick?(): void;
   appear?:boolean;
-  headline: string;
-  buttonText: string;
-  secondaryLink: string;
+  headline?: string;
+  buttonText?: string;
+  secondaryLink?: string;
+  onClick?(): void;
 }
 
 export const Modal: React.FC<IProps> = ({ appear, children, headline, buttonText, secondaryLink}) => {
@@ -21,10 +19,10 @@ export const Modal: React.FC<IProps> = ({ appear, children, headline, buttonText
       <div className={classnames(styles.imgContainer)}>
         <img style={{width:'67px'}} src={hug} />
       </div>
-      <h3 headline={headline}>{headline}</h3>
+      <h3>{headline}</h3>
       <p>{children}</p>
-      <Button buttonText={buttonText}>{buttonText}</Button>
-      <a secondaryLink={secondaryLink} href="">{secondaryLink}</a>
+      <Button>{buttonText}</Button>
+      <a href="">{secondaryLink}</a>
     </div>
   );
 };

@@ -8,21 +8,22 @@ interface IProps {
   activeText?: boolean;
   active?: boolean;
   configured?: boolean;
+  loading?: boolean;
   onClick?(): void;
 }
 
-export const Field: React.FC<IProps> = ({ activeText, children, active }) => {
+export const Field: React.FC<IProps> = ({ activeText, children, active, loading }) => {
   return (
-    <div className={classnames(styles.self)}>
+    <div className={classnames(styles.self, { [styles.loading]: loading})}>
       <div className={classnames(styles.icon, { [styles.active]: active })} />
       <div className={classnames(styles.text, { [styles.activeText]: activeText })}>{children}</div>
     </div>
   );
 };
 
-export const FieldConfigurable: React.FC<IProps> = ({ activeText, children, active }) => {
+export const FieldConfigurable: React.FC<IProps> = ({ activeText, children, active, loading }) => {
   return (
-    <div className={classnames(styles.self)}>
+    <div className={classnames(styles.self, { [styles.loading]: loading})}>
       <div className={classnames(styles.icon, { [styles.active]: active })} />
       <div className={classnames(styles.text, { [styles.activeText]: activeText })}>{children}</div>
       <Counter>21</Counter>
@@ -30,9 +31,9 @@ export const FieldConfigurable: React.FC<IProps> = ({ activeText, children, acti
   );
 };
 
-export const FieldConfigured: React.FC<IProps> = ({ activeText, children, active }) => {
+export const FieldConfigured: React.FC<IProps> = ({ activeText, children, active, loading}) => {
   return (
-    <div className={classnames(styles.self)}>
+    <div className={classnames(styles.self, { [styles.loading]: loading})}>
       <div className={classnames(styles.icon, { [styles.active]: active })} />
       <div className={classnames(styles.text, { [styles.activeText]: activeText })}>{children}</div>
       <Counter configured>21</Counter>

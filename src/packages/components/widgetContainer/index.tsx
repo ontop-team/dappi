@@ -8,11 +8,12 @@ interface IProps {
   onClick?(): void;
   error?:boolean;
   warning?: boolean;
+  loading?: boolean;
 }
 
-export const WidgetContainer: React.FC<IProps> = ({ error, children, warning }) => {
+export const WidgetContainer: React.FC<IProps> = ({ error, children, warning, loading }) => {
   return (
-    <div className={classnames(styles.self, { [styles.error]:error, [styles.warning]:warning })}>
+    <div className={classnames(styles.self, { [styles.error]:error, [styles.warning]:warning, [styles.loading]:loading })}>
     </div>
   );
 };

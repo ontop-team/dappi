@@ -12,7 +12,7 @@
   @extend %interFont;
   background-color: $very-dark-grey;
   box-shadow: 0px 4px 10px -8px rgba(10, 16, 19, 0.24), inset 0px 1px 1px rgba(255, 255, 255, 0.1);
-  max-height: 60px;
+  height: 60px;
   padding: 21px 20px 19px 60px;
   border-radius: $regular-border-radius;
   max-width: 440px;
@@ -52,4 +52,37 @@
 
 .active {
   background-image: url('../../../images/eyeActive.svg');
+}
+
+.loadingInner {
+  opacity: 0;
+  background-color: red;
+}
+.loading {
+  overflow: hidden;
+
+  .icon {
+    display: none;
+  }
+
+  &::before {
+    transform: rotate(3deg);
+    opacity: 0.3;
+    content: '';
+    position: absolute;
+    left: -150%;
+    display: block;
+    height: 100px;
+    width: 150%;
+    background: linear-gradient(to right, rgba(42,52,59,0) 0%,rgba(42,52,59,1) 50%,rgba(42,52,59,0) 100%);
+    animation: shine 1.5s linear infinite;
+    @keyframes shine {
+      from {
+        left: -150%;
+      }
+      to {
+        left: 300%;
+      }
+    }
+  }
 }

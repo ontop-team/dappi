@@ -14,6 +14,7 @@ import { Counter } from "@dappi/components/counter";
 import { Modal } from "@dappi/components/modal";
 import { WidgetContainer } from "@dappi/components/widgetContainer";
 import { Icon } from "@dappi/components/icon";
+import { Alert } from "@dappi/components/alert";
 import {
   Field,
   FieldConfigurable,
@@ -81,7 +82,7 @@ storiesOf("ButtonWeb3", module)
 
 
 
-  storiesOf("ButtonWeb3WithIcon", module)
+storiesOf("ButtonWeb3WithIcon", module)
   .add("primary", () => (
     <ButtonWeb3WithIcon primary onClick={action("clicked")}>
       Send<Icon send></Icon>
@@ -160,6 +161,13 @@ storiesOf("FieldConfigurable", module)
     </FieldConfigurable>
   ))
 
+  .add("Loading", () => (
+    <FieldConfigurable loading>
+      Name of smart contract
+    </FieldConfigurable>
+  ))
+
+
   .add("Configured", () => (
     <FieldConfigured active activeText>
       Name of smart contract
@@ -180,9 +188,11 @@ storiesOf("icon", module)
 
 
 storiesOf("widgetContainer", module)
+  .add("loading", () => <WidgetContainer loading></WidgetContainer>)
   .add("default", () => <WidgetContainer></WidgetContainer>)
   .add("error", () => <WidgetContainer error></WidgetContainer>)
   .add("warning", () => <WidgetContainer warning></WidgetContainer>);
+
 
 
 storiesOf("modal", module)
@@ -192,3 +202,17 @@ storiesOf("modal", module)
   .add("Appear", () => (
     <Modal appear secondaryLink={'Do not sign'} headline={'Do you want to authentice the widget?'} buttonText={'Authenticate it'}>It will be easy for your user to see that this widget comes from you, so they stay safe from scams.
     </Modal>));
+
+
+
+storiesOf("Alert", module)
+  .add("primary", () => (
+    <Alert primary onClick={action("clicked")}>
+      Send<Icon send></Icon>
+    </Alert>
+  ))
+  .add("disabled", () => (
+    <Alert disabled onClick={action("clicked")}>
+      Unlock Metamask<Icon alert></Icon>
+    </Alert>
+  ));

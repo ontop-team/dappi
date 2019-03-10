@@ -45,6 +45,32 @@
 }
 
 
+.loading {
+  position: relative;
+  overflow: hidden;
+  box-shadow: none;
+  &::before {
+    transform: rotate(3deg);
+    opacity: 0.3;
+    content: '';
+    position: absolute;
+    left: -150%;
+    display: block;
+    height: 500px;
+    width: 150%;
+    background: linear-gradient(to right, rgba(42,52,59,0) 0%,rgba(42,52,59,1) 50%,rgba(42,52,59,0) 100%);
+    animation: shine 1.5s linear infinite;
+    @keyframes shine {
+      from {
+        left: -150%;
+      }
+      to {
+        left: 300%;
+      }
+    }
+  }
+}
+
 .warning {
   animation: warning 0.3s ease-in-out;
   animation-iteration-count: 1;
