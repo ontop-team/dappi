@@ -15,6 +15,7 @@ $white: #ffffff;
 $red: #fd2d49;
 $orange: #fdaa2d;
 $green: #56f2c3;
+$purple: #613DC1;
 
 // Typography
 $very-small: 11px;
@@ -29,6 +30,7 @@ $trust: #3375bb;
 
 // Others
 $regular-border-radius: 6px;
+$big-border-radius: 12px;
 
 // Pre-defined
 %transition {
@@ -45,6 +47,26 @@ $regular-border-radius: 6px;
 
 %shrink {
   transform: scale(0.98);
+}
+
+%shine {
+  &::before {
+    content: '';
+    display: block;
+    height: 180px;
+    top: -90px;
+    width: 70px;
+    transform: rotate(1deg) translateX(-200%);
+    background-color: $white;
+    position: absolute;
+    opacity: 0.3;
+    transition: all 0.4 ease-out;
+  }
+
+  &:hover::before {
+    transform: rotate(1deg) translateX(440px);
+    transition: all 1.2s ease;
+  }
 }
 
 %very-small-font {

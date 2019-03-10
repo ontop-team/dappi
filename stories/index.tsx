@@ -11,6 +11,7 @@ import { Input, InputWithHelper } from "@dappi/components/input";
 import { ButtonWeb3, ButtonWeb3WithIcon } from "@dappi/components/buttonWeb3";
 import { Label } from "@dappi/components/label";
 import { Counter } from "@dappi/components/counter";
+import { Modal } from "@dappi/components/modal";
 import { Icon } from "@dappi/components/icon";
 import {
   Field,
@@ -170,8 +171,17 @@ storiesOf("counter", module)
 
 
 storiesOf("icon", module)
-.add("Alert", () => <Icon alert></Icon>)
-.add("Important Alert", () => <Icon importantAlert></Icon>)
-.add("Loading", () => <Icon loading></Icon>)
-.add("Success", () => <Icon success></Icon>)
-.add("Send", () => <Icon send></Icon>);
+  .add("Alert", () => <Icon alert></Icon>)
+  .add("Important Alert", () => <Icon importantAlert></Icon>)
+  .add("Loading", () => <Icon loading></Icon>)
+  .add("Success", () => <Icon success></Icon>)
+  .add("Send", () => <Icon send></Icon>);
+
+
+storiesOf("modal", module)
+  .add("Default", () => (
+    <Modal secondaryLink={'Do not sign'} headline={'Do you want to authentice the widget?'} buttonText={'Authenticate it'}>It will be easy for your user to see that this widget comes from you, so they stay safe from scams.
+    </Modal>))
+  .add("Appear", () => (
+    <Modal appear secondaryLink={'Do not sign'} headline={'Do you want to authentice the widget?'} buttonText={'Authenticate it'}>It will be easy for your user to see that this widget comes from you, so they stay safe from scams.
+    </Modal>));

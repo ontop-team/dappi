@@ -2,10 +2,32 @@
 @import '../variables.scss';
 
 .self {
+  display: inline-block;
+  position: relative;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2E1572;
   @extend %interFont;
-  color: $black;
-
+  height: 33px;
+  padding: 13px 15px 12px 15px;
+  border-radius: $regular-border-radius;
+  padding: 0 15px;
+  border: 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #D5C6FD 100%);
+  box-shadow: 0px 15px 30px -5px rgba(46, 21, 114, 0.5);
+  border-radius: 70px;
+  outline: 0;
+  overflow: hidden;
+  @extend %transition;
+  @extend %shine;
   &:hover {
-    color: blue;
+    cursor: pointer;
+    @extend %moveup;
+    @extend %transition;
+    box-shadow: 0px 20px 40px -4px rgba(46, 21, 114, 0.65);
+  }
+  &:active {
+    @extend %transition;
+    @extend %shrink;
   }
 }
