@@ -77,15 +77,37 @@ $purplish: #C9B4FF;
 
 
 .appear {
-  animation: appear 1s cubic-bezier(0.5, 0, 0.2, 1);
+  animation: appear 0.8s cubic-bezier(0.5, 0, 0.2, 1);
   animation-iteration-count: 1;
+
+  &::before {
+    content:'';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: disappear 0.4s ease-in;
+    border-radius: $big-border-radius;
+
+    @keyframes disappear {
+      from {
+        background-color: $purple;
+      }
+
+      to {
+        background-color: transparent;
+      }
+    }
+  }
   
   @keyframes appear {
     0% {
-      transform: translate(-55%,-50%) scale(2) rotateZ(-10deg);
+      transform: translate(-55%,-50%) scale(0.5) rotateZ(-10deg);
     }
     50% {
-      transform: translate(-50%,-50%) scale(1.5) rotateZ(8deg);
+      transform: translate(-50%,-50%) scale(0.7) rotateZ(8deg);
     }
     100% {
       transform: translate(-50%,-50%) scale(1) rotateZ(0);
